@@ -1,0 +1,98 @@
+<!-- MAINPAGE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sunny's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background -->
+    <div class="background"></div>
+    <div class="background-overlay"></div>
+
+    <!-- Back Button -->
+    <button id="back-button" onclick="goBack()">← Back</button>
+
+    <!-- Main Content -->
+    <div id="main-content">
+
+        <!-- Page Title -->
+        <header class="page-title">
+            <div class="profile-frame">
+                <img src="sunnypfp.jpg" alt="Profile">
+            </div>
+            <h1>SunnyDarky090511's Portfolio</h1>
+            <p>⏣ Robux payment only</p>
+        </header>
+
+        <!-- Sections -->
+        <main class="sections">
+
+            <!-- Introduction -->
+            <div class="section-box">
+                <h2>Introduction</h2>
+                <p>A brief introduction about who I am, my journey, and what drives my creative and professional work.</p>
+
+                <div class="box-links">
+                    <button onclick="loadContent('https://sunnydarrky090511-jpg.github.io/sunny-introduction/')">
+                        Click here
+                    </button>
+                </div>
+            </div>
+
+            <!-- Showcases -->
+            <div class="section-box">
+                <h2>Designer's Highlight</h2>
+                <p>Highlighting my best work, projects, and creative designs that show professionalism.</p>
+
+                <div class="box-links">
+                    <button onclick="loadContent('https://sunnydarrky090511-jpg.github.io/livery-showcase/')">
+                        Click here for Livery Showcase
+                    </button>
+
+                    <!-- 🔴 GRAPHIC SHOWCASE LINK GOES HERE 🔴 -->
+                   <button onclick="loadContent('https://sunnydarrky090511-jpg.github.io/graphic-showcase/')">
+			Click here for Graphic Showcase
+		    </button>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="section-box">
+                <h2>Contact & Workplaces</h2>
+                <p>Information about where I work, collaborations, and experiences, including departments I have worked with and projects I have contributed to.</p>
+                <div class="box-links">
+                    <button onclick="loadContent('https://sunnydarrky090511-jpg.github.io/contact-and-workplaces/')">
+                        Click here
+                    </button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Iframe -->
+    <iframe id="content-frame"></iframe>
+
+    <!-- Script -->
+    <script>
+        function loadContent(url) {
+            document.getElementById("main-content").style.display = "none";
+            document.getElementById("content-frame").style.display = "block";
+            document.getElementById("content-frame").src = url;
+            document.getElementById("back-button").style.display = "block";
+        }
+
+        function goBack() {
+            document.getElementById("content-frame").src = "";
+            document.getElementById("content-frame").style.display = "none";
+            document.getElementById("main-content").style.display = "block";
+            document.getElementById("back-button").style.display = "none";
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
+
+</body>
+</html>
